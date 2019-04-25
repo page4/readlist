@@ -10,6 +10,9 @@
    The key to understand the model is to observe how `acquire` matches with `release`.
     
 2. [Clarifying Direct IO's Semantics](https://ext4.wiki.kernel.org/index.php/Clarifying_Direct_IO%27s_Semantics)
+   
+   The O_DIRECT write can fall back to buffered I/O when allocating write.
+   Even in the preallocating write, the data is not guaranteed to be present after a system crash unless the application uses an explicit fsync(2) call.
 
 3. [Type Erasure as the Glue between OO and Generic Programming](https://www.artima.com/cppsource/type_erasure.html)
 
