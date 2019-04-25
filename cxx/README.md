@@ -10,3 +10,9 @@
    The key to understand the model is to observe how `acquire` matches with `release`.
     
 2. [Clarifying Direct IO's Semantics](https://ext4.wiki.kernel.org/index.php/Clarifying_Direct_IO%27s_Semantics)
+
+3. [Type Erasure as the Glue between OO and Generic Programming](https://www.artima.com/cppsource/type_erasure.html)
+
+   Type plays a different role in OO programming and in generic programming.
+   OO runtime polymorphism will pay a performance penalty, while GP compile time polymorphism introduces a compile-time dependency.
+   On C++ template metaprogramming, Dave Abrahams and Aleksey Gurtovoy define type erasure as "the process of turning a wide variety of types with a common interface into one type with that same interface."
