@@ -19,3 +19,15 @@
    Type plays a different role in OO programming and in generic programming.
    OO runtime polymorphism will pay a performance penalty, while GP compile time polymorphism introduces a compile-time dependency.
    On C++ template metaprogramming, Dave Abrahams and Aleksey Gurtovoy define type erasure as "the process of turning a wide variety of types with a common interface into one type with that same interface."
+
+
+4. [Minimizing Dependencies within Generic Classesfor Faster and Smaller Programs](http://www.stroustrup.com/SCARY.pdf)
+
+   > SCARY describes assignments and initializations that are Seemingly erroneous (appearing Constrained by conflicting generic param-eters), but Actually work with the Right implementation (unconstrained bY the conflict due to minimized dependencies). An Example:
+   
+   ```
+   set<int, C1, A1>::iterator i1;
+   set<int, C2, A1>::iterator i2 = i1;
+   set<int, C1, A2>::iterator i3 = i1;
+   ```
+   The iterator of a set is defined by the structure of the underlying rbtree. 
