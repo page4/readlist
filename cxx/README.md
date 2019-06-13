@@ -31,3 +31,9 @@
    set<int, C1, A2>::iterator i3 = i1;
    ```
    The iterator of a set is defined by the structure of the underlying rbtree. 
+
+5. [Detecting and handling split locks (misaligned memory access)](https://lwn.net/Articles/790464/)
+
+The misaligned memory access that crosses two cache lines gets worse 
+because of locking the whole memory bus to solve the coherency problem.
+The split lock blocks not only the CPU performing the access, but also all others in the system.
