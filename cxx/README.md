@@ -37,3 +37,7 @@
 The misaligned memory access that crosses two cache lines gets worse 
 because of locking the whole memory bus to solve the coherency problem.
 The split lock blocks not only the CPU performing the access, but also all others in the system.
+
+6. [Curiously recurring template pattern (Static polymorphism)](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern)
+
+Typically, the base class template will take advantage of the fact that member function bodies (definitions) are not instantiated until long after their declarations, and will use members of the derived class within its own member functions, via the use of a cast.
