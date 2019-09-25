@@ -41,3 +41,17 @@ The split lock blocks not only the CPU performing the access, but also all other
 6. [Curiously recurring template pattern (Static polymorphism)](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern)
 
 Typically, the base class template will take advantage of the fact that member function bodies (definitions) are not instantiated until long after their declarations, and will use members of the derived class within its own member functions, via the use of a cast.
+
+7. [Order of dynamic linking paths, RPATH, LD_LIBRARY_PATH, RUNPATH](https://wiki.debian.org/RpathIssue) 
+
+> 1. the DT_RPATH dynamic section attribute of the library causing the lookup
+> 2. the DT_RPATH dynamic section attribute of the executable
+> 3. the LD_LIBRARY_PATH environment variable, unless the executable is setuid/setgid.
+> 4. the DT_RUNPATH dynamic section attribute of the executable
+> 5. /etc/ld.so.cache
+> 6. base library directories (/lib and /usr/lib) 
+
+The order can be changed. For example,
+> Regarding steps 1 and 2: The DT_RPATH attribute is ignored if the DT_RUNPATH attribute is found. Then, LD_LIBRARY_PATH is searched first! 
+
+Thus, `-Wl,-rpath` is ignored on Gentoo due to DT_RUNPATH.
