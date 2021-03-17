@@ -55,3 +55,5 @@ The order can be changed. For example,
 > Regarding steps 1 and 2: The DT_RPATH attribute is ignored if the DT_RUNPATH attribute is found. Then, LD_LIBRARY_PATH is searched first! 
 
 Thus, `-Wl,-rpath` is ignored on Gentoo due to DT_RUNPATH.
+
+8. [VFIO user buffer and dma](https://listman.redhat.com/archives/vfio-users/2018-December/msg00000.html)
